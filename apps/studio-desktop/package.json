@@ -1,1 +1,10 @@
-eyJuYW1lIjoiQHZpb3JhL3N0dWRpby1kZXNrdG9wIiwidmVyc2lvbiI6IjAuMS4wIiwicHJpdmF0ZSI6dHJ1ZSwidHlwZSI6Im1vZHVsZSJ9Cg==
+{
+  "name": "@viora/studio-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "viora": "./bin/viora.mjs",
+    "viora-mcp": "./bin/viora-mcp.mjs"
+  }
+}
