@@ -2,7 +2,10 @@
 import readline from "node:readline";
 import { dispatch } from "../../../packages/srk-runtime/runtime.mjs";
 
-const tools = [
+const tools = [  { name: "edit_session.begin", description: "Start a revision-bound Viora agent editing session.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, approvalMode: { type: "string", enum: ["manual", "auto"] } }, required: ["projectPath"] } },
+  { name: "edit_session.propose", description: "Create a typed, reviewable edit proposal without mutating the project.", inputSchema: { type: "object", properties: { sessionId: { type: "string" }, intent: { type: "string" }, explanation: { type: "string" }, commands: { type: "array", items: { type: "object" } } }, required: ["sessionId", "commands"] } },
+  { name: "edit_session.review", description: "Approve or reject a pending Viora edit proposal atomically.", inputSchema: { type: "object", properties: { sessionId: { type: "string" }, approve: { type: "boolean" } }, required: ["sessionId", "approve"] } },
+  { name: "edit_session.discard", description: "Discard a draft Viora editing session.", inputSchema: { type: "object", properties: { sessionId: { type: "string" } }, required: ["sessionId"] } },
   { name: "project.create", description: "Create or open a local Viora project.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, projectName: { type: "string" } }, required: ["projectPath"] } },
   { name: "project.inspect", description: "Inspect the local Viora project snapshot.", inputSchema: { type: "object", properties: { projectPath: { type: "string" } }, required: ["projectPath"] } },
   { name: "media.import", description: "Register a local media file as a Viora asset.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, path: { type: "string" }, kind: { type: "string", enum: ["video", "audio", "image"] } }, required: ["projectPath", "path"] } },
