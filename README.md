@@ -3,7 +3,7 @@
 Viora is a local-first AI video creation runtime built on SRK. It can be used
 from Codex or any MCP-capable client, and from a terminal without a desktop UI.
 
-## Quick use
+## Quick use`r`n`r`n最快入口（自动创建本地项目、导入素材并放入 V1 时间线）：`r`n`r`n```bash`r`nnode apps/studio-desktop/bin/viora-quick.mjs ./sample.mp4 --project ./demo.viora --duration 5`r`n```
 
 ```bash
 node apps/studio-desktop/bin/viora.mjs project create --project ./demo.viora --name Demo
