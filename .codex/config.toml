@@ -1,0 +1,4 @@
+# Viora AI Studio local MCP integration
+[mcp_servers.viora]
+command = "node"
+args = ["apps/studio-desktop/bin/viora-mcp.mjs"]
