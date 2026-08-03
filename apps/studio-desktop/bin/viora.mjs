@@ -1,1 +1,22 @@
-IyEvdXNyL2Jpbi9lbnYgbm9kZQppbXBvcnQgeyBkaXNwYXRjaCB9IGZyb20gIi4uLy4uLy4uL3BhY2thZ2VzL3Nyay1ydW50aW1lL3J1bnRpbWUubWpzIjsKCmNvbnN0IGFyZ3MgPSBwcm9jZXNzLmFyZ3Yuc2xpY2UoMik7CmNvbnN0IFtncm91cCwgYWN0aW9uLCAuLi5yZXN0XSA9IGFyZ3M7CmNvbnN0IGZsYWdzID0ge307CmZvciAobGV0IGkgPSAwOyBpIDwgcmVzdC5sZW5ndGg7IGkgKz0gMSkgewogIGlmICghcmVzdFtpXS5zdGFydHNXaXRoKCItLSIpKSBjb250aW51ZTsKICBjb25zdCBrZXkgPSByZXN0W2ldLnNsaWNlKDIpOwogIGNvbnN0IG5leHQgPSByZXN0W2kgKyAxXTsKICBmbGFnc1trZXldID0gbmV4dCAmJiAhbmV4dC5zdGFydHNXaXRoKCItLSIpID8gbmV4dCA6IHRydWU7CiAgaWYgKGZsYWdzW2tleV0gIT09IHRydWUpIGkgKz0gMTsKfQpjb25zdCBwcm9qZWN0UGF0aCA9IGZsYWdzLnByb2plY3QgfHwgIi52aW9yYSI7CmNvbnN0IGNvbW1hbmQgPSBncm91cCA9PT0gInByb2plY3QiICYmIGFjdGlvbiA9PT0gImNyZWF0ZSIgPyB7IG5hbWU6ICJwcm9qZWN0LmNyZWF0ZSIsIHByb2plY3RQYXRoLCBwcm9qZWN0TmFtZTogZmxhZ3MubmFtZSB9IDoKICBncm91cCA9PT0gInByb2plY3QiICYmIGFjdGlvbiA9PT0gImluc3BlY3QiID8geyBuYW1lOiAicHJvamVjdC5pbnNwZWN0IiwgcHJvamVjdFBhdGggfSA6CiAgZ3JvdXAgPT09ICJtZWRpYSIgJiYgYWN0aW9uID09PSAiaW1wb3J0IiA/IHsgbmFtZTogIm1lZGlhLmltcG9ydCIsIHByb2plY3RQYXRoLCBwYXRoOiBmbGFncy5wYXRoIHx8IHJlc3QuZmluZCgoeCkgPT4gIXguc3RhcnRzV2l0aCgiLS0iKSksIGtpbmQ6IGZsYWdzLmtpbmQgfSA6CiAgZ3JvdXAgPT09ICJ0aW1lbGluZSIgJiYgYWN0aW9uID09PSAiYWRkIiA/IHsgbmFtZTogInRpbWVsaW5lLmNsaXAuYWRkIiwgcHJvamVjdFBhdGgsIHRyYWNrSWQ6IGZsYWdzLnRyYWNrIHx8ICJ2MSIsIGFzc2V0SWQ6IGZsYWdzLmFzc2V0LCBjbGlwSWQ6IGZsYWdzLmNsaXAsIHN0YXJ0OiBOdW1iZXIoZmxhZ3Muc3RhcnQgfHwgMCksIGR1cmF0aW9uOiBOdW1iZXIoZmxhZ3MuZHVyYXRpb24pIH0gOgogIGdyb3VwID09PSAidGltZWxpbmUiICYmIGFjdGlvbiA9PT0gImluc3BlY3QiID8geyBuYW1lOiAidGltZWxpbmUuaW5zcGVjdCIsIHByb2plY3RQYXRoIH0gOgogIGdyb3VwID09PSAicmVuZGVyIiAmJiBhY3Rpb24gPT09ICJleHBvcnQiID8geyBuYW1lOiAicmVuZGVyLmV4cG9ydCIsIHByb2plY3RQYXRoLCBvdXRwdXRQYXRoOiBmbGFncy5vdXRwdXQgfHwgIi4vcmVuZGVycy9vdXRwdXQubXA0IiB9IDogbnVsbDsKaWYgKCFjb21tYW5kKSB7IGNvbnNvbGUuZXJyb3IoIlVzYWdlOiB2aW9yYSBwcm9qZWN0IGNyZWF0ZXxpbnNwZWN0LCBtZWRpYSBpbXBvcnQsIHRpbWVsaW5lIGFkZHxpbnNwZWN0LCByZW5kZXIgZXhwb3J0Iik7IHByb2Nlc3MuZXhpdCgyKTsgfQp0cnkgeyBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShhd2FpdCBkaXNwYXRjaChjb21tYW5kKSwgbnVsbCwgMikpOyB9IGNhdGNoIChlcnJvcikgeyBjb25zb2xlLmVycm9yKEpTT04uc3RyaW5naWZ5KHsgZXJyb3I6IGVycm9yLm1lc3NhZ2UgfSkpOyBwcm9jZXNzLmV4aXQoMSk7IH0=
+#!/usr/bin/env node
+import { dispatch } from "../../../packages/srk-runtime/runtime.mjs";
+
+const args = process.argv.slice(2);
+const [group, action, ...rest] = args;
+const flags = {};
+for (let i = 0; i < rest.length; i += 1) {
+  if (!rest[i].startsWith("--")) continue;
+  const key = rest[i].slice(2);
+  const next = rest[i + 1];
+  flags[key] = next && !next.startsWith("--") ? next : true;
+  if (flags[key] !== true) i += 1;
+}
+const projectPath = flags.project || ".viora";
+const command = group === "project" && action === "create" ? { name: "project.create", projectPath, projectName: flags.name } :
+  group === "project" && action === "inspect" ? { name: "project.inspect", projectPath } :
+  group === "media" && action === "import" ? { name: "media.import", projectPath, path: flags.path || rest.find((x) => !x.startsWith("--")), kind: flags.kind } :
+  group === "timeline" && action === "add" ? { name: "timeline.clip.add", projectPath, trackId: flags.track || "v1", assetId: flags.asset || undefined, clipId: flags.clip, start: Number(flags.start || 0), duration: Number(flags.duration) } :
+  group === "timeline" && action === "inspect" ? { name: "timeline.inspect", projectPath } :
+  group === "render" && action === "export" ? { name: "render.export", projectPath, outputPath: flags.output || "./renders/output.mp4" } : null;
+if (!command) { console.error("Usage: viora project create|inspect, media import, timeline add|inspect, render export"); process.exit(2); }
+try { console.log(JSON.stringify(await dispatch(command), null, 2)); } catch (error) { console.error(JSON.stringify({ error: error.message })); process.exit(1); }
