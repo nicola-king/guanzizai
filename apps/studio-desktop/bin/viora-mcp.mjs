@@ -1,1 +1,31 @@
-IyEvdXNyL2Jpbi9lbnYgbm9kZQppbXBvcnQgcmVhZGxpbmUgZnJvbSAibm9kZTpyZWFkbGluZSI7CmltcG9ydCB7IGRpc3BhdGNoIH0gZnJvbSAiLi4vLi4vLi4vcGFja2FnZXMvc3JrLXJ1bnRpbWUvcnVudGltZS5tanMiOwoKY29uc3QgcmwgPSByZWFkbGluZS5jcmVhdGVJbnRlcmZhY2UoeyBpbnB1dDogcHJvY2Vzcy5zdGRpbiwgY3JsZkRlbGF5OiBJbmZpbml0eSB9KTsKY29uc3QgcmVwbHkgPSAoaWQsIHJlc3VsdCwgZXJyb3IpID0+IHByb2Nlc3Muc3Rkb3V0LndyaXRlKEpTT04uc3RyaW5naWZ5KHsganNvbnJwYzogIjIuMCIsIGlkLCAuLi4oZXJyb3IgPyB7IGVycm9yOiB7IGNvZGU6IC0zMjAwMCwgbWVzc2FnZTogZXJyb3IubWVzc2FnZSB9IH0gOiB7IHJlc3VsdCB9KSB9KSArICJcbiIpOwpmb3IgYXdhaXQgKGNvbnN0IGxpbmUgb2YgcmwpIHsKICBpZiAoIWxpbmUudHJpbSgpKSBjb250aW51ZTsKICB0cnkgewogICAgY29uc3QgcmVxdWVzdCA9IEpTT04ucGFyc2UobGluZSk7CiAgICBpZiAocmVxdWVzdC5tZXRob2QgPT09ICJpbml0aWFsaXplIikgcmVwbHkocmVxdWVzdC5pZCwgeyBwcm90b2NvbFZlcnNpb246ICIyMDI0LTExLTA1Iiwgc2VydmVySW5mbzogeyBuYW1lOiAidmlvcmEtYWktc3R1ZGlvIiwgdmVyc2lvbjogIjAuMS4wIiB9LCBjYXBhYmlsaXRpZXM6IHsgdG9vbHM6IHt9IH0gfSk7CiAgICBlbHNlIGlmIChyZXF1ZXN0Lm1ldGhvZCA9PT0gInRvb2xzL2xpc3QiKSByZXBseShyZXF1ZXN0LmlkLCB7IHRvb2xzOiBbInByb2plY3QuY3JlYXRlIiwgInByb2plY3QuaW5zcGVjdCIsICJtZWRpYS5pbXBvcnQiLCAidGltZWxpbmUuY2xpcC5hZGQiLCAidGltZWxpbmUuaW5zcGVjdCIsICJyZW5kZXIuZXhwb3J0Il0ubWFwKChuYW1lKSA9PiAoeyBuYW1lLCBkZXNjcmlwdGlvbjogYERpc3BhdGNoIFZpb3JhICR7bmFtZX0gdGhyb3VnaCBTUktgLCBpbnB1dFNjaGVtYTogeyB0eXBlOiAib2JqZWN0IiB9IH0pKSB9KTsKICAgIGVsc2UgaWYgKHJlcXVlc3QubWV0aG9kID09PSAidG9vbHMvY2FsbCIpIHJlcGx5KHJlcXVlc3QuaWQsIGF3YWl0IGRpc3BhdGNoKHsgbmFtZTogcmVxdWVzdC5wYXJhbXMubmFtZSwgLi4uKHJlcXVlc3QucGFyYW1zLmFyZ3VtZW50cyB8fCB7fSkgfSkpOwogICAgZWxzZSBpZiAocmVxdWVzdC5pZCAhPT0gdW5kZWZpbmVkKSByZXBseShyZXF1ZXN0LmlkLCB7fSk7CiAgfSBjYXRjaCAoZXJyb3IpIHsgcmVwbHkobnVsbCwgbnVsbCwgZXJyb3IpOyB9Cn0K
+#!/usr/bin/env node
+import readline from "node:readline";
+import { dispatch } from "../../../packages/srk-runtime/runtime.mjs";
+
+const tools = [
+  { name: "project.create", description: "Create or open a local Viora project.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, projectName: { type: "string" } }, required: ["projectPath"] } },
+  { name: "project.inspect", description: "Inspect the local Viora project snapshot.", inputSchema: { type: "object", properties: { projectPath: { type: "string" } }, required: ["projectPath"] } },
+  { name: "media.import", description: "Register a local media file as a Viora asset.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, path: { type: "string" }, kind: { type: "string", enum: ["video", "audio", "image"] } }, required: ["projectPath", "path"] } },
+  { name: "timeline.clip.add", description: "Add a non-overlapping clip to a Viora timeline track.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, trackId: { type: "string" }, assetId: { type: "string" }, clipId: { type: "string" }, start: { type: "number", minimum: 0 }, duration: { type: "number", exclusiveMinimum: 0 } }, required: ["projectPath", "trackId", "assetId", "duration"] } },
+  { name: "timeline.inspect", description: "Inspect the semantic Viora timeline.", inputSchema: { type: "object", properties: { projectPath: { type: "string" } }, required: ["projectPath"] } },
+  { name: "render.export", description: "Create a deterministic, inspectable Viora render plan.", inputSchema: { type: "object", properties: { projectPath: { type: "string" }, outputPath: { type: "string" } }, required: ["projectPath", "outputPath"] } }
+];
+
+const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
+const send = (message) => process.stdout.write(JSON.stringify(message) + "\n");
+const result = (id, value) => send({ jsonrpc: "2.0", id, result: value });
+const failure = (id, error) => send({ jsonrpc: "2.0", id, error: { code: -32000, message: error.message } });
+
+for await (const line of rl) {
+  if (!line.trim()) continue;
+  try {
+    const request = JSON.parse(line);
+    if (request.method === "initialize") result(request.id, { protocolVersion: "2024-11-05", serverInfo: { name: "viora-ai-studio", version: "0.1.0" }, capabilities: { tools: {} } });
+    else if (request.method === "notifications/initialized") continue;
+    else if (request.method === "tools/list") result(request.id, { tools });
+    else if (request.method === "tools/call") {
+      const value = await dispatch({ name: request.params.name, ...(request.params.arguments || {}) });
+      result(request.id, { content: [{ type: "text", text: JSON.stringify(value, null, 2) }], isError: false });
+    } else if (request.id !== undefined) result(request.id, {});
+  } catch (error) { failure(null, error); }
+}
