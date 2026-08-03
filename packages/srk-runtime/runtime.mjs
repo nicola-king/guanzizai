@@ -1,1 +1,59 @@
-aW1wb3J0IHsgbWtkaXIsIHJlYWRGaWxlLCB3cml0ZUZpbGUsIGFwcGVuZEZpbGUgfSBmcm9tICJub2RlOmZzL3Byb21pc2VzIjsKaW1wb3J0IHsgZGlybmFtZSwgcmVzb2x2ZSB9IGZyb20gIm5vZGU6cGF0aCI7CmltcG9ydCB7IGNyZWF0ZUhhc2ggfSBmcm9tICJub2RlOmNyeXB0byI7Cgpjb25zdCBub3cgPSAoKSA9PiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCk7CmNvbnN0IGlkID0gKHByZWZpeCkgPT4gYCR7cHJlZml4fS0ke0RhdGUubm93KCl9LSR7TWF0aC5yYW5kb20oKS50b1N0cmluZygzNikuc2xpY2UoMiwgOCl9YDsKY29uc3QgcmVhZFByb2plY3QgPSBhc3luYyAocm9vdCkgPT4gSlNPTi5wYXJzZShhd2FpdCByZWFkRmlsZShyZXNvbHZlKHJvb3QsICJwcm9qZWN0Lmpzb24iKSwgInV0ZjgiKSk7CmNvbnN0IHNhdmVQcm9qZWN0ID0gYXN5bmMgKHJvb3QsIHByb2plY3QsIGV2ZW50KSA9PiB7CiAgYXdhaXQgbWtkaXIocm9vdCwgeyByZWN1cnNpdmU6IHRydWUgfSk7CiAgYXdhaXQgd3JpdGVGaWxlKHJlc29sdmUocm9vdCwgInByb2plY3QuanNvbiIpLCBKU09OLnN0cmluZ2lmeShwcm9qZWN0LCBudWxsLCAyKSArICJcbiIsICJ1dGY4Iik7CiAgaWYgKGV2ZW50KSBhd2FpdCBhcHBlbmRGaWxlKHJlc29sdmUocm9vdCwgImV2ZW50cy5qc29ubCIpLCBKU09OLnN0cmluZ2lmeShldmVudCkgKyAiXG4iLCAidXRmOCIpOwp9Owpjb25zdCBlbnN1cmVQcm9qZWN0ID0gYXN5bmMgKHJvb3QsIG5hbWUgPSAiVmlvcmEgUHJvamVjdCIpID0+IHsKICB0cnkgeyByZXR1cm4gYXdhaXQgcmVhZFByb2plY3Qocm9vdCk7IH0gY2F0Y2ggewogICAgY29uc3QgcHJvamVjdCA9IHsgc2NoZW1hVmVyc2lvbjogMSwgaWQ6IGlkKCJwcm9qZWN0IiksIG5hbWUsIHJldmlzaW9uOiAwLCB0aW1lbGluZTogeyB0cmFja3M6IFt7IGlkOiAidjEiLCBraW5kOiAidmlkZW8iLCBjbGlwczogW10gfV0gfSwgYXNzZXRzOiBbXSwgdXBkYXRlZEF0OiBub3coKSB9OwogICAgYXdhaXQgc2F2ZVByb2plY3Qocm9vdCwgcHJvamVjdCwgeyBzY2hlbWFWZXJzaW9uOiAxLCBpZDogaWQoImV2ZW50IiksIHByb2plY3RJZDogcHJvamVjdC5pZCwgcmV2aXNpb246IDAsIG5hbWU6ICJwcm9qZWN0LmNyZWF0ZWQiLCBvY2N1cnJlZEF0OiBwcm9qZWN0LnVwZGF0ZWRBdCwgZGF0YToge30gfSk7CiAgICByZXR1cm4gcHJvamVjdDsKICB9Cn07CgpleHBvcnQgYXN5bmMgZnVuY3Rpb24gZGlzcGF0Y2goY29tbWFuZCkgewogIGNvbnN0IHJvb3QgPSByZXNvbHZlKGNvbW1hbmQucHJvamVjdFBhdGggfHwgIi52aW9yYSIpOwogIGxldCBwcm9qZWN0ID0gYXdhaXQgZW5zdXJlUHJvamVjdChyb290LCBjb21tYW5kLm5hbWUpOwogIGNvbnN0IGV2ZW50ID0gKG5hbWUsIGRhdGEsIHJldmlzaW9uKSA9PiAoeyBzY2hlbWFWZXJzaW9uOiAxLCBpZDogaWQoImV2ZW50IiksIHByb2plY3RJZDogcHJvamVjdC5pZCwgcmV2aXNpb24sIG5hbWUsIG9jY3VycmVkQXQ6IG5vdygpLCBkYXRhIH0pOwogIGlmIChjb21tYW5kLm5hbWUgPT09ICJwcm9qZWN0LmNyZWF0ZSIpIHsKICAgIHByb2plY3QgPSBhd2FpdCBlbnN1cmVQcm9qZWN0KHJvb3QsIGNvbW1hbmQucHJvamVjdE5hbWUgfHwgIlZpb3JhIFByb2plY3QiKTsKICAgIHJldHVybiB7IHByb2plY3RJZDogcHJvamVjdC5pZCwgcmV2aXNpb246IHByb2plY3QucmV2aXNpb24sIHBhdGg6IHJvb3QgfTsKICB9CiAgaWYgKGNvbW1hbmQubmFtZSA9PT0gInByb2plY3QuaW5zcGVjdCIpIHJldHVybiBwcm9qZWN0OwogIGlmIChjb21tYW5kLm5hbWUgPT09ICJtZWRpYS5pbXBvcnQiKSB7CiAgICBjb25zdCBhc3NldCA9IHsgaWQ6IGlkKCJhc3NldCIpLCBwYXRoOiByZXNvbHZlKGNvbW1hbmQucGF0aCksIGtpbmQ6IGNvbW1hbmQua2luZCB8fCAidmlkZW8iIH07CiAgICBwcm9qZWN0ID0geyAuLi5wcm9qZWN0LCByZXZpc2lvbjogcHJvamVjdC5yZXZpc2lvbiArIDEsIGFzc2V0czogWy4uLnByb2plY3QuYXNzZXRzLCBhc3NldF0sIHVwZGF0ZWRBdDogbm93KCkgfTsKICAgIGF3YWl0IHNhdmVQcm9qZWN0KHJvb3QsIHByb2plY3QsIGV2ZW50KGNvbW1hbmQubmFtZSwgYXNzZXQsIHByb2plY3QucmV2aXNpb24pKTsKICAgIHJldHVybiBhc3NldDsKICB9CiAgaWYgKGNvbW1hbmQubmFtZSA9PT0gInRpbWVsaW5lLmNsaXAuYWRkIikgewogICAgY29uc3QgdHJhY2sgPSBwcm9qZWN0LnRpbWVsaW5lLnRyYWNrcy5maW5kKChpdGVtKSA9PiBpdGVtLmlkID09PSBjb21tYW5kLnRyYWNrSWQpOwogICAgaWYgKCF0cmFjaykgdGhyb3cgbmV3IEVycm9yKGB0cmFjayBub3QgZm91bmQ6ICR7Y29tbWFuZC50cmFja0lkfWApOwogICAgY29uc3QgY2xpcCA9IHsgaWQ6IGNvbW1hbmQuY2xpcElkIHx8IGlkKCJjbGlwIiksIGFzc2V0SWQ6IGNvbW1hbmQuYXNzZXRJZCwgc3RhcnQ6IGNvbW1hbmQuc3RhcnQgfHwgMCwgZHVyYXRpb246IGNvbW1hbmQuZHVyYXRpb24gfTsKICAgIGlmICghKGNsaXAuZHVyYXRpb24gPiAwKSB8fCBjbGlwLnN0YXJ0IDwgMCkgdGhyb3cgbmV3IEVycm9yKCJzdGFydCBtdXN0IGJlIG5vbi1uZWdhdGl2ZSBhbmQgZHVyYXRpb24gbXVzdCBiZSBwb3NpdGl2ZSIpOwogICAgaWYgKHRyYWNrLmNsaXBzLnNvbWUoKHgpID0+IHguc3RhcnQgPCBjbGlwLnN0YXJ0ICsgY2xpcC5kdXJhdGlvbiAmJiBjbGlwLnN0YXJ0IDwgeC5zdGFydCArIHguZHVyYXRpb24pKSB0aHJvdyBuZXcgRXJyb3IoImNsaXAgb3ZlcmxhcHMgYW4gZXhpc3RpbmcgY2xpcCIpOwogICAgY29uc3QgbmV4dFRyYWNrID0geyAuLi50cmFjaywgY2xpcHM6IFsuLi50cmFjay5jbGlwcywgY2xpcF0uc29ydCgoYSwgYikgPT4gYS5zdGFydCAtIGIuc3RhcnQpIH07CiAgICBwcm9qZWN0ID0geyAuLi5wcm9qZWN0LCByZXZpc2lvbjogcHJvamVjdC5yZXZpc2lvbiArIDEsIHRpbWVsaW5lOiB7IC4uLnByb2plY3QudGltZWxpbmUsIHRyYWNrczogcHJvamVjdC50aW1lbGluZS50cmFja3MubWFwKCh4KSA9PiB4LmlkID09PSB0cmFjay5pZCA/IG5leHRUcmFjayA6IHgpIH0sIHVwZGF0ZWRBdDogbm93KCkgfTsKICAgIGF3YWl0IHNhdmVQcm9qZWN0KHJvb3QsIHByb2plY3QsIGV2ZW50KGNvbW1hbmQubmFtZSwgY2xpcCwgcHJvamVjdC5yZXZpc2lvbikpOwogICAgcmV0dXJuIGNsaXA7CiAgfQogIGlmIChjb21tYW5kLm5hbWUgPT09ICJ0aW1lbGluZS5pbnNwZWN0IikgcmV0dXJuIHByb2plY3QudGltZWxpbmU7CiAgaWYgKGNvbW1hbmQubmFtZSA9PT0gInJlbmRlci5leHBvcnQiKSB7CiAgICBjb25zdCByZWNpcGUgPSBjb21tYW5kLnJlY2lwZSB8fCB7IGNvbnRhaW5lcjogIm1wNCIsIHZpZGVvQ29kZWM6ICJsaWJ4MjY0IiwgYXVkaW9Db2RlYzogImFhYyIsIHdpZHRoOiAxOTIwLCBoZWlnaHQ6IDEwODAsIGZyYW1lUmF0ZTogMzAgfTsKICAgIGNvbnN0IG1hbmlmZXN0ID0geyBzY2hlbWFWZXJzaW9uOiAxLCBwcm9qZWN0SWQ6IHByb2plY3QuaWQsIHJldmlzaW9uOiBwcm9qZWN0LnJldmlzaW9uLCBvdXRwdXRQYXRoOiByZXNvbHZlKGNvbW1hbmQub3V0cHV0UGF0aCksIHJlY2lwZSwgY3JlYXRlZEF0OiBub3coKSB9OwogICAgYXdhaXQgbWtkaXIoZGlybmFtZShtYW5pZmVzdC5vdXRwdXRQYXRoKSwgeyByZWN1cnNpdmU6IHRydWUgfSk7CiAgICBjb25zdCBkaWdlc3QgPSBjcmVhdGVIYXNoKCJzaGEyNTYiKS51cGRhdGUoSlNPTi5zdHJpbmdpZnkobWFuaWZlc3QpKS5kaWdlc3QoImhleCIpOwogICAgYXdhaXQgd3JpdGVGaWxlKGAke21hbmlmZXN0Lm91dHB1dFBhdGh9LnZpb3JhLXJlbmRlci5qc29uYCwgSlNPTi5zdHJpbmdpZnkoeyAuLi5tYW5pZmVzdCwgcGxhbkhhc2g6IGRpZ2VzdCB9LCBudWxsLCAyKSArICJcbiIsICJ1dGY4Iik7CiAgICByZXR1cm4geyBzdGF0dXM6ICJwbGFubmVkIiwgLi4ubWFuaWZlc3QsIHBsYW5IYXNoOiBkaWdlc3QsIG5vdGU6ICJGRm1wZWcgZXhlY3V0aW9uIGlzIHRoZSBuZXh0IGFkYXB0ZXIgc3RlcDsgdGhpcyBwbGFuIGlzIGRldGVybWluaXN0aWMgYW5kIGluc3BlY3RhYmxlLiIgfTsKICB9CiAgdGhyb3cgbmV3IEVycm9yKGB1bmtub3duIGNvbW1hbmQ6ICR7Y29tbWFuZC5uYW1lfWApOwp9Cg==
+import { mkdir, readFile, writeFile, appendFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
+import { createHash } from "node:crypto";
+
+const now = () => new Date().toISOString();
+const id = (prefix) => `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+const readProject = async (root) => JSON.parse(await readFile(resolve(root, "project.json"), "utf8"));
+const saveProject = async (root, project, event) => {
+  await mkdir(root, { recursive: true });
+  await writeFile(resolve(root, "project.json"), JSON.stringify(project, null, 2) + "\n", "utf8");
+  if (event) await appendFile(resolve(root, "events.jsonl"), JSON.stringify(event) + "\n", "utf8");
+};
+const ensureProject = async (root, name = "Viora Project") => {
+  try { return await readProject(root); } catch {
+    const project = { schemaVersion: 1, id: id("project"), name, revision: 0, timeline: { tracks: [{ id: "v1", kind: "video", clips: [] }] }, assets: [], updatedAt: now() };
+    await saveProject(root, project, { schemaVersion: 1, id: id("event"), projectId: project.id, revision: 0, name: "project.created", occurredAt: project.updatedAt, data: {} });
+    return project;
+  }
+};
+
+export async function dispatch(command) {
+  const root = resolve(command.projectPath || ".viora");
+  let project = await ensureProject(root, command.name);
+  const event = (name, data, revision) => ({ schemaVersion: 1, id: id("event"), projectId: project.id, revision, name, occurredAt: now(), data });
+  if (command.name === "project.create") {
+    project = await ensureProject(root, command.projectName || "Viora Project");
+    return { projectId: project.id, revision: project.revision, path: root };
+  }
+  if (command.name === "project.inspect") return project;
+  if (command.name === "media.import") {
+    const asset = { id: id("asset"), path: resolve(command.path), kind: command.kind || "video" };
+    project = { ...project, revision: project.revision + 1, assets: [...project.assets, asset], updatedAt: now() };
+    await saveProject(root, project, event(command.name, asset, project.revision));
+    return asset;
+  }
+  if (command.name === "timeline.clip.add") {
+    const track = project.timeline.tracks.find((item) => item.id === command.trackId);
+    if (!track) throw new Error(`track not found: ${command.trackId}`);
+    const assetId = command.assetId || project.assets.at(-1)?.id;
+    if (!assetId) throw new Error("no asset available; import media first");
+    const clip = { id: command.clipId || id("clip"), assetId, start: command.start || 0, duration: command.duration };
+    if (!(clip.duration > 0) || clip.start < 0) throw new Error("start must be non-negative and duration must be positive");
+    if (track.clips.some((x) => x.start < clip.start + clip.duration && clip.start < x.start + x.duration)) throw new Error("clip overlaps an existing clip");
+    const nextTrack = { ...track, clips: [...track.clips, clip].sort((a, b) => a.start - b.start) };
+    project = { ...project, revision: project.revision + 1, timeline: { ...project.timeline, tracks: project.timeline.tracks.map((x) => x.id === track.id ? nextTrack : x) }, updatedAt: now() };
+    await saveProject(root, project, event(command.name, clip, project.revision));
+    return clip;
+  }
+  if (command.name === "timeline.inspect") return project.timeline;
+  if (command.name === "render.export") {
+    const recipe = command.recipe || { container: "mp4", videoCodec: "libx264", audioCodec: "aac", width: 1920, height: 1080, frameRate: 30 };
+    const manifest = { schemaVersion: 1, projectId: project.id, revision: project.revision, outputPath: resolve(command.outputPath), recipe, createdAt: now() };
+    await mkdir(dirname(manifest.outputPath), { recursive: true });
+    const digest = createHash("sha256").update(JSON.stringify(manifest)).digest("hex");
+    await writeFile(`${manifest.outputPath}.viora-render.json`, JSON.stringify({ ...manifest, planHash: digest }, null, 2) + "\n", "utf8");
+    return { status: "planned", ...manifest, planHash: digest, note: "FFmpeg execution is the next adapter step; this plan is deterministic and inspectable." };
+  }
+  throw new Error(`unknown command: ${command.name}`);
+}
