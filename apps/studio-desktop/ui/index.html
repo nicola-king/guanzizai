@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Viora AI Studio</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,system-ui,sans-serif;background:#11131a;color:#edf0f7}body{margin:0}header{padding:18px 24px;border-bottom:1px solid #2b3040}main{display:grid;grid-template-columns:280px 1fr 320px;gap:16px;padding:16px}section{background:#191c25;border:1px solid #2b3040;border-radius:12px;padding:16px;min-height:440px}h1{margin:0;font-size:20px}h2{font-size:14px;color:#aab3c8}label{display:block;font-size:12px;color:#aab3c8;margin-top:12px}input,button{box-sizing:border-box;width:100%;margin-top:6px;padding:10px;border-radius:8px;border:1px solid #3a4257;background:#11131a;color:#edf0f7}button{cursor:pointer;background:#4e6cff;border-color:#637dff}button.secondary{background:#262c3b}pre{white-space:pre-wrap;color:#cbd3e8;font-size:12px}.timeline{min-height:260px;border:1px dashed #49536d;border-radius:8px;padding:12px}.clip{background:#4e6cff;padding:12px;border-radius:6px;margin:8px 0}.hint{color:#8e98ae;font-size:12px}
+  </style>
+</head>
+<body>
+  <header><h1>Viora AI Studio</h1><div class="hint">SRK · EVA · Local First · Agent First</div></header>
+  <main>
+    <section><h2>项目与素材</h2><label>项目目录<input id="project" value=".viora" /></label><button id="create">创建/打开项目</button><label>素材路径<input id="media" placeholder="C:\\Videos\\sample.mp4" /></label><button id="import" class="secondary">导入素材</button><pre id="assets">尚未读取项目</pre></section>
+    <section><h2>时间线</h2><div id="timeline" class="timeline"><span class="hint">创建项目后加载时间线</span></div><label>时长（毫秒）<input id="duration" type="number" value="5000" /></label><button id="add">加入 v1 轨道</button><button id="inspect" class="secondary">检查冲突/刷新</button></section>
+    <section><h2>EVA / 导出</h2><p class="hint">当前操作通过同一 SRK 命令路径执行。</p><button id="export">生成导出计划</button><pre id="log">准备就绪</pre></section>
+  </main>
+  <script>
+    const $=id=>document.getElementById(id); const call=(name,arguments_)=>fetch('/api/command',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,...arguments_})}).then(async r=>{const x=await r.json();if(!r.ok)throw Error(x.error||'请求失败');return x});
+    const project=()=>({projectPath:$('project').value}); const show=x=>$('log').textContent=JSON.stringify(x,null,2);
+    async function refresh(){const x=await call('project.inspect',project());$('assets').textContent=JSON.stringify(x.assets,null,2);$('timeline').innerHTML=x.timeline.tracks[0].clips.length?x.timeline.tracks[0].clips.map(c=>`<div class="clip">${c.assetId} · ${c.start}ms · ${c.duration}ms</div>`).join(''):'<span class="hint">时间线为空</span>';}
+    $('create').onclick=async()=>{try{show(await call('project.create',project()));await refresh()}catch(e){show({error:e.message})}};
+    $('import').onclick=async()=>{try{show(await call('media.import',{...project(),path:$('media').value}));await refresh()}catch(e){show({error:e.message})}};
+    $('add').onclick=async()=>{try{show(await call('timeline.clip.add',{...project(),trackId:'v1',duration:Number($('duration').value)}));await refresh()}catch(e){show({error:e.message})}};
+    $('inspect').onclick=async()=>{try{await refresh();show({status:'timeline ok'})}catch(e){show({error:e.message})}};
+    $('export').onclick=async()=>{try{show(await call('render.export',{...project(),outputPath:project().projectPath+'/renders/viora-preview.mp4'}))}catch(e){show({error:e.message})}};
+  </script>
+</body>
+</html>
