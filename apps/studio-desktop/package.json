@@ -1,0 +1,10 @@
+{
+  "name": "@viora/studio-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "viora": "./bin/viora.mjs",
+    "viora-mcp": "./bin/viora-mcp.mjs"
+  }
+}
